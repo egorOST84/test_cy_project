@@ -11,23 +11,30 @@ import { handleJavaScriptErrors } from '../support/utils';
 // Importing locators for Request Demo and Confirmation pages
 import RequestDemoLocators from '../../pages/demo/request-demo.locators';
 import ConfirmationPage from "../../pages/confirmation/confirmation.locators";
+import HeaderPage from "../../pages/header/header.page";
+import CommonLocators from "../../pages/common/common.locators";
 
 // Importing functions for Request Demo page
 import { RequestDemoPage } from '../../pages/demo/request-demo.page';
+import { CommonPage } from "../../pages/common/common.page";
 
 // Importing content text for Confirmation page
 import { confirmationContentText } from "../../pages/confirmation/confirmation.text";
+
+
+
 
 
 describe('e2e Request a demo', () => {
 
     beforeEach(() => {
         // Visiting the base URL
-        cy.visit('/');
+        CommonPage.goToMainPage();
 
         // Clicking on the 'Request a Demo' button
         cy.log('Clicking on the Request a Demo button');
-        cy.get('a.btn.btn-gradient.mt-n1[href=\'https://www.paylocity.com/request-a-demo/?sitead=rad-header\']')
+        //HeaderPage.requestDemoButton
+         CommonLocators.requestDemoButton
             .should('be.visible')
             .click();
         handleJavaScriptErrors();
@@ -110,20 +117,20 @@ describe('e2e Request a demo', () => {
             });
         });
 
-        it('User receives confirmation', () => {
+        it.skip('User receives confirmation', () => {
             // TODO
         });
 
     });
 
-    context.only('Negative scenarios', () => {
+    context('Negative scenarios', () => {
 
         const testData = [
             { locator: 'businessEmailInput', message: 'Please provide a value for Business Email', isEmpty: true, inputValue: '', elementIndex: 0 },
             { locator: 'businessEmailInput', message: 'Please enter a valid email address.', isEmpty: false, inputValue: 'invalidemail', elementIndex: 0},
             { locator: 'phoneNumberInput', message: 'Please provide a value for Phone', isEmpty: true, inputValue: '', elementIndex: 1 },
             { locator: 'phoneNumberInput', message: 'Please enter a valid phone number', isEmpty: false, inputValue: 'invalidphone', elementIndex: 1},
-
+            //... put there data-set with all necessary test-cases
         ];
 
         testData.forEach(({ locator, message, isEmpty, inputValue, elementIndex }) => {

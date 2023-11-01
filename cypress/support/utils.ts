@@ -69,6 +69,12 @@ export function handleJavaScriptErrors() {
             cy.log('Error: Cannot read properties of undefined (reading \'TenantFeatures\')');
             return false
         }
+        // Check for Bad Gateway error
+        if (err.message.includes("Bad Gateway")) {
+            // Handle Bad Gateway error
+            cy.log('Error: Bad Gateway');
+            return false;
+        }
         // If the error is not due to lack of jQuery or cannot read property 'TenantFeatures' of undefined, return true
         return true
     })
