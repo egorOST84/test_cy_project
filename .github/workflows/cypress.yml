@@ -1,9 +1,9 @@
 name: End-to-end tests
 on: [push]
 jobs:
-  chrome:
+  cypress-run:
     runs-on: ubuntu-latest
-    name: E2E on Chrome
+    name: E2E tests
     # Runs tests in parallel with matrix strategy https://docs.cypress.io/guides/guides/parallelization
     # https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
     # Also see warning here https://github.com/cypress-io/github-action#parallel
@@ -18,7 +18,6 @@ jobs:
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v6
         with:
-          browser: chrome
           # Starts web server for E2E tests - replace with your own server invocation
           # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
           start: npx cypress run
