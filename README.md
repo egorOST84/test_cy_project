@@ -5,10 +5,8 @@
 :information_source: Learn how to write these tests. More info: [docs.cypress.io](https://docs.cypress.io/guides/end-to-end-testing/testing-your-app)
 
 ## :goal_net: Goals
-- keep it simple - no 'custom' abstractions/functions/utils/helpers (use what Cypress provides)
+- keep it simple
 - tests are easily readable
-- project is easily understandable even to people without previous JS or Cypress knowledge
-- [use shortcuts](https://docs.cypress.io/api/cypress-api/custom-commands#4-Skip-your-UI-as-much-as-possible) to avoid repeating/testing the same UI actions over and over again
 
 ## :gear: Setup
 
@@ -22,7 +20,7 @@
 
 :file_folder: Custom commands are located in `./support` folder (`utils.ts`)
 
-:file_folder: Function commands is located in `./src` folder (`getEmail.ts.ts`)
+:file_folder: Function commands is located in `./src` folder (`getEmail.ts`)
 
 :file_folder: Selectors are located in `cypress/pages` folder using page object model(POM) design pattern
 
