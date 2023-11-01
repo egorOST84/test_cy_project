@@ -1,9 +1,5 @@
 # **Sample** E2E test suite with Cypress
 
-All updates are done with the `npm ci` command. After cloning the repository, run this command.
-
-
-
 [![cypress-example](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/detailed/urshkd&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/urshkd/runs) 
 [![cypress-example](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/count/urshkd&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/urshkd/runs)
 > **application under test:** https://www.paylocity.com/
@@ -21,9 +17,9 @@ All updates are done with the `npm ci` command. After cloning the repository, ru
 
 ## :gear: Setup
 
-1. `git clone https://github.com/helenanull/cypress-example.git`
-2. cd to `cypress-example` folder and run `npm install`
-
+1. `git clone https://github.com/egorOST84/test_cy_project.git`
+2. cd to `test_cy_project` folder and run `npm install`
+   - All updates are done with the `npm ci` command. After cloning the repository, you can run this command.
 
 ## :heavy_check_mark: Run tests
 
@@ -34,7 +30,7 @@ All updates are done with the `npm ci` command. After cloning the repository, ru
     - cypress __headless mode__ (cypress run):
         - `npm run cy:run:web` OR `cypress run --env device=web`
 - If you installed Cypress zip:
-    - import **`cypress-example`** folder and you are good to go
+    - import **`test_cy_project`** folder and you are good to go
 
 ## :bulb: Information
 #### :test_tube: Tests
@@ -46,7 +42,7 @@ All updates are done with the `npm ci` command. After cloning the repository, ru
 
 #### :hammer_and_wrench: Configuration
 Config files:
-1. `cypress.config.js` - Main config file where default behavior of Cypress can be modified. [More info](https://docs.cypress.io/guides/references/configuration)
+1. `cypress.config.ts` - Main config file where default behavior of Cypress can be modified. [More info](https://docs.cypress.io/guides/references/configuration)
 2. `plugins/index.js` - Plugins file is where we can programmatically alter the resolved configuration [More info](https://docs.cypress.io/guides/tooling/plugins-guide#Use-Cases)
 
 This test suite is supporting multiple viewports (mobile and desktop). See `plugins/index.js` file
