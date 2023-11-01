@@ -1,6 +1,7 @@
 import { defineConfig } from 'cypress'
 
 export default defineConfig({
+  projectId: "test_cy_project",
   includeShadowDom: true,
   chromeWebSecurity: false,
   e2e: {
